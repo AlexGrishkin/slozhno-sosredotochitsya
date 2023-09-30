@@ -45,9 +45,15 @@
   }
 }
 
-@media (368px <= width <1024px) {
+@media (width >= 1024px) {
   .page.theme_light .header_title {
-    text-shadow: 4px 4px 0px #ff8dcb;
+    text-shadow: 4px 4px 0px #ff0070;
+  }
+}
+
+@media (width >= 1024px) {
+  .page.theme_auto .header_title {
+    text-shadow: 4px 4px 0px #ff0070;
   }
 }
 

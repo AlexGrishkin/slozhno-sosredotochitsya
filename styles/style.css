@@ -2,14 +2,12 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  /* position: relative; */
-  /* background-image: url(../images/cover-image-dark.png); */
   background-image: var(--bg-image);
   background-color: var(--bg-color);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  font-family: var(--main-font);
+  font-family: var(--main-font, monospace);
   background-size: cover;
 }
 
@@ -32,6 +30,10 @@
   color: var(--title-color);
 }
 
+.li_title_decor {
+  font-weight: 400;
+}
+
 .content-section {
   padding: 10px 10px;
 }
@@ -42,14 +44,14 @@
 
 .header_title {
   color: var(--header-color, #db00ff);
-  text-shadow: 4px 4px 0px #ff0070;
+  text-shadow: 4px 4px 0px var(--accent-color);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: 700;
   line-height: 82.5%; /* 95.7px */
 }
 
 .header__theme-menu-button {
-  border: none;
+  border: transparent;
   padding: 0;
   color: var(--section-title-color);
   font-size: 18px;
@@ -59,7 +61,7 @@
 }
 
 .header__theme-menu-button_active {
-  padding: 0 13px;
+  padding: 0px 13px;
   outline: 1px solid var(--section-title-color);
 }
 
@@ -142,7 +144,7 @@
 .header_item::before {
   content: "REC";
   position: absolute;
-  font-family: var(--main-font);
+  font-family: var(--main-font, monospace);
   font-size: 18px;
   color: var(--accent-color);
   inset-inline-end: 28px;
@@ -177,8 +179,9 @@
 
 .article_content {
   display: grid;
-  gap: 7px;
-  margin-block-end: -5px;
+  margin-block-start: 10px;
+  gap: 6px;
+  margin-block-end: -4px;
 }
 
 .footer {
@@ -201,7 +204,8 @@ a {
 
 .header__theme-menu-button:focus-visible {
   outline: none;
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--section-title-color);
+  inline-size: 66px;
 }
 
 a:hover {
@@ -220,7 +224,7 @@ a:focus-visible {
 
 @media (min-width: 768px) {
   .header_paragraph {
-    inline-size: calc(50% - 20px);
+    inline-size: 50%;
   }
 }
 
@@ -289,7 +293,7 @@ a:focus-visible {
 @media (min-width: 768px) {
   .content-section-decorated:nth-child(4) {
     display: grid;
-    gap: 20px;
+    gap: 10px;
   }
 }
 
@@ -303,6 +307,7 @@ a:focus-visible {
       minmax(min-content, max-content) minmax(min-content, max-content)
       minmax(min-content, max-content) minmax(min-content, max-content);
     gap: 13px 20px;
+    margin-block-end: 2px;
   }
 }
 
